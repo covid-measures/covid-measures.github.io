@@ -25,7 +25,7 @@
         <button class="tablinks" id="details-button" onclick="openTab('details-button', 'Model Details')">Model Details</button>
       </div>
 
-      <div id="Intro" class="tabcontent">
+      <div id="Intro" class="tabcontent text-tab">
         <h3>Introduction</h3>
         <p>Put Narrative Here.</p>
       </div>
@@ -35,9 +35,44 @@
         <iframe src="https://morganpkain.shinyapps.io/covid/" width="100%" height="1300px"></iframe>
       </div>
   
-      <div id="Model Details" class="tabcontent">
+      <div id="Model Details" class="tabcontent text-tab" width="100%">
           <h3>Model Details</h3>
-          <iframe src="model_update.pdf" width="100%" height="1300px"></iframe>
+          <h4>Overview</h4>
+          <p>We develop a compartmental model of COVID-19 to evaluate control efforts through non-pharmaceutical
+          interventions. Currently, with this model we are aiming to illustrate possible trajectories under different
+          hypothetical scenarios rather than trying to match exact dynamics of a location. We have turned the model
+          into an interactive app to allow viewers to choose interventions over different time periods to consider the
+          impact of the onset and duration of those interventions as well as the potential for resurgence after control
+          measures are lifted (https://morganpkain.shinyapps.io/covid/).</p>
+          <h4>Overview</h4>
+          <p>Our model explicitly tracks nine compartments, including exposed, asymptomatic, presymptomatic, symptomatic, 
+          hospitalized, and recovered. We assume that all individuals who are exposed go through an incubation period. 
+          A portion of those who then become infectious remain asymptomatic for the entire infection (I<sub>a</sub>) while 
+          individuals who go on to become symptomatic first go through a pre-symptomatic but infectious state (I<sub>p</sub>). 
+          Those who show symptoms are further divided between those with mild symptoms
+          (I<sub>m</sub>) and severe symptoms (I<sub>s</sub>) who require hospitalization. We assume that after admission to the 
+          hospital, no onward transmission occurs. The model is implemented in R with the package “pomp” using a 
+          stochastic simulator where the movements between compartments are multinomially distributed based on transition
+          rates.</p>
+          <img src="model_schematic.png" width="600px">
+          <h4>Implementation of Interventions</h4>
+          <p>Crucially, our modeling framework allows for different types, intensities, and durations of interventions to
+          be implemented, and thereby illustrates how these interventions impact dynamics and resultant number of
+          COVID-19 cases and fatalities through time. We currently consider 3 possible interventions that are can be
+          implemented at different times during the simulation:
+          <ol>
+          <li>social distancing for a set duration (applied as a scaling of the transmission rate for all infected
+          individuals)</li>
+          <li>social distancing triggered by the number of hospitalized individuals crossing a threshold (applied as
+          above)</li>
+          <li>isolation of symptomatic individuals (applied as a scaling of the transmission rate for only symptomatic
+          individuals I<sub>s</sub> and I<sub>m</sub>)</li>
+          </ol>
+          In the future, we are considering additional interventions and scenarios including contact tracing with efficacy 
+          dependent on the testing capacity, fatality and hospitalization rates dependent on the age structure of
+          a population, and fatality rates further dependent on hospital capacities.</p>
+ 
+          
         </div>
       </div>
     </div>
