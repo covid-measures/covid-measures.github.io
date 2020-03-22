@@ -99,3 +99,9 @@ h5 {
 p {
   font-size: 1.1em;
 }
+
+svg {
+  width: 80%;
+  height: 400px;
+  fill: red;
+}
