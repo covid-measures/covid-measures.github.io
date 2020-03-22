@@ -21,15 +21,26 @@ body {
 }
 
 .text-tab {
-  padding: 10px 50px;
+  padding: 10px 200px;
 }
 
-@media only screen and (max-width: 768px) {
+img {
+  border-style: solid;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+@media (max-width: 768px) {
   .container {
     width: 98%;
   }
   .text-tab {
-    padding: 6px 12px;
+    padding: 6px 20px;
+  }
+  img {
+    width: 90%;
   }
 }
 
@@ -65,8 +76,6 @@ body {
   background-color: #B1040E;
 }
 
-
-
 .text-link {
   color: #8c1515; 
 }
@@ -75,10 +84,18 @@ body {
   color: #B1040E; 
 }
 
-img {
-  border-style: solid;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+h3 {
+  font-size: 1.8em;
+}
+
+h4  {
+  font-size: 1.5em;
+}
+
+h5 {
+  font-size: 1.1em;
+}
+
+p {
+  font-size: 1.1em;
 }
