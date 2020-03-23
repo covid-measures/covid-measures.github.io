@@ -29,10 +29,14 @@
       .attr("transform", "translate(0," + (height - margin.top - margin.bottom) + ")")
       .call(d3.axisBottom(x));
 
+
+
     var max_value = d3.max(data.map(function(obj) {return d3.max(
                         Object.keys(obj).map(function (key) {
                           return ['day',""].includes(key) ? 0 : +obj[key]; }));}))
     
+    if (svg_id == "chart_2") {max_value == 17000}
+
     var y = d3.scaleLinear()
       .domain([0, max_value])
       .range([ height - margin.top - margin.bottom , 0 ]);
@@ -127,17 +131,17 @@ make_plot("d3_data/output/epi.out_2020-03-23_no_intervention.csv","chart_1",[],"
 make_plot("d3_data/output/epi.out_2020-03-23_social_distancing_full_length_0.5.csv",
 	"chart_2",
 	[[new Date("2020-02-15"),new Date("2021-09-7")]],
-	"Light Distancing (50% of normal social contacts)")
+	"Light Distancing (50% normal social contacts)")
 
 make_plot("d3_data/output/epi.out_2020-03-23_social_distancing_full_length_0.3.csv",
 	"chart_3",
 	[[new Date("2020-02-15"),new Date("2021-09-7")]],
-	"Strong Distancing (30% of normal social contacts)")
+	"Strong Distancing (30% normal social contacts)")
 
 make_plot("d3_data/output/epi.out_2020-03-23_social_distancing_full_length_0.25.csv",
 	"chart_4",
 	[[new Date("2020-02-15"),new Date("2021-09-7")]],
-	"Extreme Distancing (25% of normal social contacts)")
+	"Extreme Distancing (25% normal social contacts)")
 
 make_plot("d3_data/output/epi.out_2020-03-23.0.3.136days.csv",
 	"chart_6",
