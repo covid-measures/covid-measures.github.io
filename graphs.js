@@ -27,7 +27,7 @@
     
     g.append("g")
       .attr("transform", "translate(0," + (height - margin.top - margin.bottom) + ")")
-      .call(d3.axisBottom(x).tickFormat(d3.timeFormat("%b %y")));
+      .call(d3.axisBottom(x).tickFormat(d3.timeFormat("%b %Y")));
 
 
 
@@ -121,7 +121,6 @@
               .y(function(d) { return y(d[run]) })
             )
 
-     
         // path animation adapted from http://bl.ocks.org/methodofaction/4063326
         var totalLength = path.node().getTotalLength();
 
@@ -131,8 +130,6 @@
             .transition()
             .duration(2000)
             .attr("stroke-dashoffset", 0);
-        
-        
     });
 
     if (["chart_lightswitch"].includes(svg_id) ) {
@@ -150,6 +147,16 @@
           .style("text-anchor", "left")
           .style("fill", "red")
           .text("130 hospitalized")
+    }
+
+     if (["chart_1"].includes(svg_id) ) {
+
+        g.append("text")
+          .attr("transform", "translate(" + (x(new Date("2021-03-05")))  + " ," +
+          (y(4500) - 10) + ")")
+          .style("text-anchor", "middle")
+          .style("fill", "red")
+          .text("Hospital Capacity")
     }
   }
 
