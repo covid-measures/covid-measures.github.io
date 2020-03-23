@@ -14,7 +14,7 @@
 
   function drawGraph(data,svg_id,intervention_dates,title) {
     update_dates(data)
-
+    console.log(data)
     const svg = d3.select("#" + svg_id)
     
     var g =  svg.append("g")
@@ -35,13 +35,12 @@
                         Object.keys(obj).map(function (key) {
                           return ['day',""].includes(key) ? 0 : +obj[key]; }));}))
     
-    if (svg_id == "chart_2") {max_value = 17000;}
+    if (["chart_1","chart_2","chart_3","chart_4","chart_6","chart_7","chart_8"].includes(svg_id)) {max_value = 17000;}
 
     var y = d3.scaleLinear()
       .domain([0, max_value])
       .range([ height - margin.top - margin.bottom , 0 ]);
       
-
       g.append("text")
       .attr("transform", "rotate(-90)")
       .attr("y", 0 - margin.left - 2)
@@ -72,15 +71,25 @@
           .attr("stroke","red")
           .attr("stroke-width",2.0)
           .attr("x1", x(new Date("2020-01-15")))
-          .attr("x2", x(new Date("2021-06-18")))
+          .attr("x2", x(new Date("2021-07-17")))
           .attr("y1", y(4500))
           .attr("y2", y(4500))
+    }
+
+    if (["chart_3","chart_4","chart_6","chart_7","chart_8"].includes(svg_id) ) {
+        g.append("line")
+          .attr("stroke","red")
+          .attr("stroke-width",2.0)
+          .attr("x1", x(new Date("2020-01-15")))
+          .attr("x2", x(new Date("2021-07-17")))
+          .attr("y1", y(4500))
+          .attr("y2", y(8000))
     }
 
     var i = 0
     intervention_dates.map(function(item) { 
         g.append("rect")
-          .attr("fill", i == 0 ? "#2e8b57" : "#53868b")
+          .attr("fill", i == 0 ? "#2e8b57" : "#78B7C5")
           .attr("width", x(item[1]) - x(item[0]))
           .attr("height", height - margin.top - margin.bottom)
           .attr("x", x(item[0]))  
@@ -88,7 +97,7 @@
         i++
      })
 
-    var runs = [... Array(5).keys()].map(x => x+1);
+    var runs = [... Array(20).keys()].map(x => x+1);
     runs.push("median");
 
     // var waypoint = new Waypoint({
@@ -125,7 +134,23 @@
         
         
     });
-    
+
+    if (["chart_lightswitch"].includes(svg_id) ) {
+        g.append("line")
+          .attr("stroke","red")
+          .attr("stroke-width",2.0)
+          .attr("x1", x(new Date("2020-04-04")))
+          .attr("x2", x(new Date("2020-06-10")))
+          .attr("y1", y(131.5))
+          .attr("y2", y(131.5))
+
+        g.append("text")
+          .attr("transform", "translate(" + (x(new Date("2020-06-10")) + 5)  + " ," +
+          (y(131.5) + 5) + ")")
+          .style("text-anchor", "left")
+          .style("fill", "red")
+          .text("130 hospitalized")
+    }
   }
 
   function make_plot(data_file, svg_id, intervention_dates,title) {
@@ -137,40 +162,40 @@
     
 
   
-make_plot("d3_data/output/epi.out_2020-03-23_no_intervention.csv","chart_1",[],"No Social Distancing")
+make_plot("d3_data/output/epi.out_2020-03-23.no.intervention.csv","chart_1",[],"No Social Distancing")
 
-make_plot("d3_data/output/epi.out_2020-03-23_social_distancing_full_length_0.5.csv",
+make_plot("d3_data/output/epi.out_2020-03-23.full.length.0.6.csv",
     "chart_2",
-    [[new Date("2020-02-15"),new Date("2021-09-7")]],
-    "Light Distancing (50% normal social contacts)")
+    [[new Date("2020-03-05"),new Date("2021-07-17")]],
+    "Light Distancing (60% normal social contacts)")
 
-make_plot("d3_data/output/epi.out_2020-03-23_social_distancing_full_length_0.3.csv",
+make_plot("d3_data/output/epi.out_2020-03-23.full.length.0.5.csv",
     "chart_3",
-    [[new Date("2020-02-15"),new Date("2021-09-7")]],
-    "Strong Distancing (30% normal social contacts)")
+    [[new Date("2020-03-05"),new Date("2021-07-17")]],
+    "Medium Distancing (50% normal social contacts)")
 
-make_plot("d3_data/output/epi.out_2020-03-23_social_distancing_full_length_0.25.csv",
+make_plot("d3_data/output/epi.out_2020-03-23.full.length.0.4.csv",
     "chart_4",
-    [[new Date("2020-02-15"),new Date("2021-09-7")]],
-    "Extreme Distancing (25% normal social contacts)")
+    [[new Date("2020-03-05"),new Date("2021-07-17")]],
+    "Strong Distancing (40% normal social contacts)")
 
-make_plot("d3_data/output/epi.out_2020-03-23.0.3.136days.csv",
+make_plot("d3_data/output/epi.out_2020-03-23.90days.0.4.csv",
     "chart_6",
-    [[new Date("2020-02-15"),new Date("2020-06-01")]],
-    "Strong Distancing (4.5 Months)")
+    [[new Date("2020-03-15"),new Date("2020-06-12")]],
+    "Strong Distancing (3 Months)")
 
-make_plot("d3_data/output/epi.out_2020-03-23.0.3.270days.csv",
+make_plot("d3_data/output/epi.out_2020-03-23.150days.0.4.csv",
     "chart_7",
-    [[new Date("2020-02-15"),new Date("2020-11-11")]],
-    "Strong Distancing (9 Months)")
+    [[new Date("2020-03-15"),new Date("2020-08-11")]],
+    "Strong Distancing (5 Months)")
 
-make_plot("d3_data/output/epi.out_2020-03-23.0.3.366days.csv",
+make_plot("d3_data/output/epi.out_2020-03-23.300days.0.4.csv",
     "chart_8",
-    [[new Date("2020-02-15"),new Date("2021-02-16")]],
-    "Strong Distancing (1 Year)")
+    [[new Date("2020-03-15"),new Date("2021-01-08")]],
+    "Strong Distancing (10 months)")
 
-make_plot("d3_data/output/epi.out_2020-03-23_lightswitch_0.25_high_15_low_3.csv",
+make_plot("d3_data/output/epi.out_2020-03-23.lightswitch.devin.params.csv",
     "chart_lightswitch",
-    [[new Date("2020-02-15"),new Date("2020-03-16")],
-     [new Date("2020-03-16"),new Date("2021-09-7")]],
-    "Extreme Distancing (1 Month) + Lightswitch")
+    [[new Date("2020-03-05"),new Date("2020-06-02")],
+     [new Date("2020-06-02"),new Date("2021-07-17")]],
+    "Extreme Distancing (3 Months) + Lightswitch")
