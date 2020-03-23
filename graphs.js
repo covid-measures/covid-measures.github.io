@@ -1,6 +1,6 @@
   // global variables used across all charts
   var margin = {top: 30, right: 30, bottom: 60, left: 60};
-  var width = Math.min(600,document.getElementsByClassName("container")[0].offsetWidth - 5);
+  var width = Math.min(600,document.getElementsByClassName("container")[0].offsetWidth - 10);
   var height = 300;
   var start_day = new Date("2020-01-15");
 
@@ -59,7 +59,7 @@
       g.append("text")             
       .attr("transform",
             "translate(" + ((width - margin.left - margin.right)/2 - 10) + " ," + 
-                           -10 + ")")
+                           -15 + ")")
       .style("text-anchor", "middle")
       .text(title);
 
