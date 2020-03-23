@@ -126,35 +126,35 @@ make_plot("d3_data/output/epi.out_2020-03-23_no_intervention.csv","chart_1",[],"
 make_plot("d3_data/output/epi.out_2020-03-23_social_distancing_full_length_0.5.csv",
 	"chart_2",
 	[[new Date("2020-02-15"),new Date("2021-09-7")]],
-	"Light Social Distancing (50% of normal social contacts)")
+	"Light Distancing (50% of normal social contacts)")
 
 make_plot("d3_data/output/epi.out_2020-03-23_social_distancing_full_length_0.3.csv",
 	"chart_3",
 	[[new Date("2020-02-15"),new Date("2021-09-7")]],
-	"Strong Social Distancing (30% of normal social contacts)")
+	"Strong Distancing (30% of normal social contacts)")
 
 make_plot("d3_data/output/epi.out_2020-03-23_social_distancing_full_length_0.2.csv",
 	"chart_4",
 	[[new Date("2020-02-15"),new Date("2021-09-7")]],
-	"Extreme Social Distancing (20% of normal social contacts)")
+	"Extreme Distancing (20% of normal social contacts)")
 
 make_plot("d3_data/output/epi.out_2020-03-23.0.3.136days.csv",
 	"chart_6",
 	[[new Date("2020-02-15"),new Date("2020-06-01")]],
-	"Strong Social Distancing (4.5 Months)")
+	"Strong Distancing (4.5 Months)")
 
 make_plot("d3_data/output/epi.out_2020-03-23.0.3.270days.csv",
 	"chart_7",
 	[[new Date("2020-02-15"),new Date("2020-11-11")]],
-	"Strong Social Distancing (9 Months)")
+	"Strong Distancing (9 Months)")
 
 make_plot("d3_data/output/epi.out_2020-03-23.0.3.366days.csv",
 	"chart_8",
 	[[new Date("2020-02-15"),new Date("2021-02-16")]],
-	"Strong Social Distancing (1 Year)")
+	"Strong Distancing (1 Year)")
 
 make_plot("d3_data/output/epi.out_2020-03-23_lightswitch_0.20_high_15_low_2.csv",
 	"chart_lightswitch",
 	[[new Date("2020-02-15"),new Date("2020-03-16")],
      [new Date("2020-03-16"),new Date("2021-09-7")]],
-	"Extreme Social Distancing (1 Month) + Lightswitch Method")
+	"Extreme Distancing (1 Month) + Lightswitch")
