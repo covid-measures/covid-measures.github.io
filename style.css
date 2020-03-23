@@ -111,9 +111,13 @@ svg {
 }
 
 .sd-highlight {
-  color: #2e8b57
+  color: #2e8b57;
 }
 
 .ls-highlight {
-  color: #78B7C5
+  color: #78B7C5;
+}
+
+.sim-highlight {
+  color: grey;
 }

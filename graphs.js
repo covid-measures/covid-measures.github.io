@@ -174,17 +174,17 @@ make_plot("d3_data/output/epi.out_2020-03-23.no.intervention.csv","chart_1",[],"
 make_plot("d3_data/output/epi.out_2020-03-23.full.length.0.6.csv",
     "chart_2",
     [[new Date("2020-03-05"),new Date("2021-07-17")]],
-    "Light Distancing (60% normal social contacts)")
+    "Light Distancing (Extended Period)")
 
 make_plot("d3_data/output/epi.out_2020-03-23.full.length.0.5.csv",
     "chart_3",
     [[new Date("2020-03-05"),new Date("2021-07-17")]],
-    "Medium Distancing (50% normal social contacts)")
+    "Medium Distancing (Extended Period)")
 
 make_plot("d3_data/output/epi.out_2020-03-23.full.length.0.4.csv",
     "chart_4",
     [[new Date("2020-03-05"),new Date("2021-07-17")]],
-    "Strong Distancing (40% normal social contacts)")
+    "Strong Distancing (Extended Period)")
 
 make_plot("d3_data/output/epi.out_2020-03-23.90days.0.4.csv",
     "chart_6",

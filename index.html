@@ -33,7 +33,7 @@
       <div id="Intro" class="tabcontent text-tab">
 
         <h4 id='basic-waypoint'>Flatten the Curve</h4>
-        <p>By now, you've probably already seen a diagram like this. One of the most important steps we can all take right now is practicing <b class="sd-highlight">social distancing</b>. By cutting down on the number of people we interact with, we can slow down the spread of COVID-19. Here's a hypothetical scenario where a COVID-19 outbreak begins on Jan 15, and spreads for 50 days before we begin social distancing. </p>
+        <p>By now, you've probably already seen a diagram like this. One of the most important steps we can all take right now is practicing <b class="sd-highlight">social distancing</b>. By cutting down on the number of people we interact with, we can slow down the spread of COVID-19. Here's a hypothetical scenario where a COVID-19 outbreak begins on Jan 15, and spreads for 50 days before we begin social distancing. We run <b class="sim-highlight">20 simulations</b> and show the <b>median value for each day</b>.</p> 
 
         <svg id="chart_1"></svg>
 
@@ -83,7 +83,7 @@
           into an interactive app to allow viewers to choose interventions over different time periods to consider the
           impact of the onset and duration of those interventions as well as the potential for resurgence after control
           measures are lifted.</p>
-          <h4>Overview</h4>
+          <h4>Model Structure</h4>
           <p>Our model explicitly tracks nine compartments, including exposed, asymptomatic, presymptomatic, symptomatic, 
           hospitalized, and recovered. We assume that all individuals who are exposed go through an incubation period. 
           A portion of those who then become infectious remain asymptomatic for the entire infection (I<sub>a</sub>) while 
@@ -98,7 +98,7 @@
           <p>Crucially, our modeling framework allows for different types, intensities, and durations of interventions to
           be implemented, and thereby illustrates how these interventions impact dynamics and resultant number of
           COVID-19 cases and fatalities through time. We currently consider 3 possible interventions that are can be
-          implemented at different times during the simulation:
+          implemented at different times during the simulation:</p>
           <ol>
           <li>social distancing for a set duration (applied as a scaling of the transmission rate for all infected
           individuals)</li>
@@ -107,9 +107,10 @@
           <li>isolation of symptomatic individuals (applied as a scaling of the transmission rate for only symptomatic
           individuals I<sub>s</sub> and I<sub>m</sub>)</li>
           </ol>
-          In the future, we are considering additional interventions and scenarios including contact tracing with efficacy 
+          <p>In the future, we are considering additional interventions and scenarios including contact tracing with efficacy 
           dependent on the testing capacity, fatality and hospitalization rates dependent on the age structure of
           a population, and fatality rates further dependent on hospital capacities.</p>
+          <p> All code for the model is available on Github: <b><a class="text-link" href="https://github.com/morgankain/COVID_interventions">https://github.com/morgankain/COVID_interventions</a></b>.</p>
           
         </div>
       </div>
