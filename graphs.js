@@ -1,6 +1,6 @@
   // global variables used across all charts
   var margin = {top: 30, right: 30, bottom: 60, left: 60};
-  var width = Math.min(600,document.getElementsByClassName("container")[0].offsetWidth);
+  var width = Math.min(600,document.getElementsByClassName("container")[0].offsetWidth - 5);
   var height = 300;
   var start_day = new Date("2020-01-15");
 
