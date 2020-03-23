@@ -58,8 +58,8 @@
 
       g.append("text")             
       .attr("transform",
-            "translate(" + ((width - margin.left - margin.right)/2 - 10) + " ," + 
-                           -15 + ")")
+            "translate(" + ((width - margin.left - margin.right)/2 - 15) + " ," + 
+                           -10 + ")")
       .style("text-anchor", "middle")
       .text(title);
 
