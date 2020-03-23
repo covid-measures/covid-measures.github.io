@@ -17,8 +17,8 @@
       </p>
       <p>
         Take a look at our <b class="text-link" onclick="openTab('intro-button', 'Intro')">intro</b> below, 
-        or skip directly to our <b class="text-link" onclick="openTab('model-button', 'Complete Model')">
-        complete model</b> or an overview of <b class="text-link" onclick="openTab('details-button', 'Model Details')">model details</b>.
+        or skip directly to our <b class="text-link" onclick="openTab('model-button', 'Interactive Model')">
+        interactive model</b> or an overview of <b class="text-link" onclick="openTab('details-button', 'Model Details')">model details</b>.
       </p>
       <h5>
         Team: Marissa Childs, Morgan Kain, Devin Kirk, Mallory Harris, Jacob Ritchie, Lisa Couper, Isabel Delwel, Nicole Nova, Erin Mordecai
@@ -26,7 +26,7 @@
 
       <div class="tab">
         <button class="tablinks" id="intro-button" onclick="openTab('intro-button', 'Intro')">Introduction</button>
-        <button class="tablinks" id="model-button" onclick="openTab('model-button', 'Complete Model')">Complete Model</button>
+        <button class="tablinks" id="model-button" onclick="openTab('model-button', 'Interactive Model')">Interactive Model</button>
         <button class="tablinks" id="details-button" onclick="openTab('details-button', 'Model Details')">Model Details</button>
       </div>
 
@@ -68,10 +68,10 @@
 
         <p>We know this is an incredibly stressful and scary time for people around the world. There's a lot of uncertainty, but scientists, medical professionals, and leaders across industries are working together to help us find solutions. If we make decisions based on the best models we have, we can get through this crisis while protecting the most vulnerable and minimizing the impact on our lives and the economy.</p>
 
-        <p>If you'd like, you can <b class="text-link" onclick="openTab('model-button', 'Complete Model')">play around with our model more here</b>. Test how interventions change based on start date and adding in quarantining of symptomatic people.</p>
+        <p>If you'd like, you can <b class="text-link" onclick="openTab('model-button', 'Interactive Model')">play around with our model more here</b>. Test how interventions change based on start date and adding in quarantining of symptomatic people.</p>
       </div>
 
-      <div id="Complete Model" class="tabcontent">
+      <div id="Interactive Model" class="tabcontent">
         <iframe src="https://morganpkain.shinyapps.io/covid/" width="100%" height="1300px"></iframe>
       </div>
   
@@ -110,7 +110,38 @@
           <p>In the future, we are considering additional interventions and scenarios including contact tracing with efficacy 
           dependent on the testing capacity, fatality and hospitalization rates dependent on the age structure of
           a population, and fatality rates further dependent on hospital capacities.</p>
+          
+          <h4>Parameters used in Introduction</h4>
+
+          <p>The effects of these parameters are heavily dependent on the transmission rate, which varies from region to region. Additionally, for short-term interventions to be effective, much higher levels of social distancing will likely be required.</p><br>
+
+          <table class="tg">
+            <tr>
+              <th class="tg-0pky">Level</th>
+              <th class="tg-0pky">Proportion of baseline contact rate</th>
+            </tr>
+            <tr>
+              <td class="tg-0pky">Light social distancing</td>
+              <td class="tg-0pky">60%</td>
+            </tr>
+            <tr>
+              <td class="tg-0pky">Medium social distancing<br></td>
+              <td class="tg-0pky">50%</td>
+            </tr>
+            <tr>
+              <td class="tg-0pky">Strong social distancing<br></td>
+              <td class="tg-0pky">40%</td>
+            </tr>
+            <tr>
+              <td class="tg-0pky">Extreme social distancing<br></td>
+              <td class="tg-0pky">25%</td>
+            </tr>
+          </table>
+
+          <h4>Source Code</h4>
+
           <p> All code for the model is available on Github: <b><a class="text-link" href="https://github.com/morgankain/COVID_interventions">https://github.com/morgankain/COVID_interventions</a></b>.</p>
+
           
         </div>
       </div>
