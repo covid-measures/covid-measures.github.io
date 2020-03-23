@@ -188,17 +188,17 @@ make_plot("d3_data/output/epi.out_2020-03-23.full.length.0.4.csv",
 
 make_plot("d3_data/output/epi.out_2020-03-23.90days.0.4.csv",
     "chart_6",
-    [[new Date("2020-03-15"),new Date("2020-06-12")]],
+    [[new Date("2020-03-05"),new Date("2020-06-02")]],
     "Strong Distancing (3 Months)")
 
 make_plot("d3_data/output/epi.out_2020-03-23.150days.0.4.csv",
     "chart_7",
-    [[new Date("2020-03-15"),new Date("2020-08-11")]],
+    [[new Date("2020-03-05"),new Date("2020-08-01")]],
     "Strong Distancing (5 Months)")
 
 make_plot("d3_data/output/epi.out_2020-03-23.300days.0.4.csv",
     "chart_8",
-    [[new Date("2020-03-15"),new Date("2021-01-08")]],
+    [[new Date("2020-03-05"),new Date("2020-12-29")]],
     "Strong Distancing (10 months)")
 
 make_plot("d3_data/output/epi.out_2020-03-23.lightswitch.devin.params.csv",
