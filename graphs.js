@@ -75,41 +75,42 @@
 
     var runs = [... Array(5).keys()].map(x => x+1);
     runs.push("median");
-	var waypoint = new Waypoint({
-		element: document.getElementById(svg_id),
-		handler: function() {
+    
+	// var waypoint = new Waypoint({
+	// 	element: document.getElementById(svg_id),
+	// 	handler: function() {}});
 
-	    runs.map(function(run) {
-	        
-	        var color = run == "median" ? "black" : "grey";
-	        var width = run == "median" ?  1.5 : 1.5;
-	        var alpha = run == "median" ?  1.0 : 0.5;
-	      
-	        var path = g.append("path")
-	            .datum(data)
-	            .attr("fill", "none")
-	            .attr("stroke", color)
-	            .attr("stroke-width", width)
-	            .attr("stroke-opacity", alpha)
-	            .attr("d", d3.line()
-	              .x(function(d) { return x(d.day) })
-	              .y(function(d) { return y(d[run]) })
-	            )
+    runs.map(function(run) {
+        
+        var color = run == "median" ? "black" : "grey";
+        var width = run == "median" ?  1.5 : 1.5;
+        var alpha = run == "median" ?  1.0 : 0.5;
+      
+        var path = g.append("path")
+            .datum(data)
+            .attr("fill", "none")
+            .attr("stroke", color)
+            .attr("stroke-width", width)
+            .attr("stroke-opacity", alpha)
+            .attr("d", d3.line()
+              .x(function(d) { return x(d.day) })
+              .y(function(d) { return y(d[run]) })
+            )
 
-	     
-			// path animation adapted from http://bl.ocks.org/methodofaction/4063326
-			var totalLength = path.node().getTotalLength();
+     
+		// path animation adapted from http://bl.ocks.org/methodofaction/4063326
+		var totalLength = path.node().getTotalLength();
 
-			path
-		   		.attr("stroke-dasharray", totalLength + " " + totalLength)
-		   		.attr("stroke-dashoffset", totalLength)
-		   		.transition()
-		     	.duration(2000)
-		     	.attr("stroke-dashoffset", 0);
-		  	
-	  		})
-		}
-	});
+		path
+	   		.attr("stroke-dasharray", totalLength + " " + totalLength)
+	   		.attr("stroke-dashoffset", totalLength)
+	   		.transition()
+	     	.duration(2000)
+	     	.attr("stroke-dashoffset", 0);
+	  	
+  		})
+	}
+	
   }
 
   function make_plot(data_file, svg_id, intervention_dates,title) {
