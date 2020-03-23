@@ -32,12 +32,15 @@ img {
   width: 50%;
 }
 
-@media (max-width: 768px) {
-  .container {
-    width: 98%;
-  }
+@media (max-width: 1300px) {
   .text-tab {
     padding: 6px 20px;
+  }
+}
+
+@media (max-width: 780px) {
+  .container {
+    width: 98%;
   }
   img {
     width: 90%;
@@ -101,7 +104,16 @@ p {
 }
 
 svg {
-  width: 80%;
-  height: 400px;
-  fill: red;
+  width: 600px;
+  height: 300px;
+  display: block;
+  margin: auto;
+}
+
+.sd-highlight {
+  color: #2e8b57
+}
+
+.ls-highlight {
+  color: #53868b
 }

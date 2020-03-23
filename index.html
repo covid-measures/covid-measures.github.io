@@ -8,7 +8,7 @@
 
   <body>
 
-    <div class="container">
+    <div class="container" id="container">
       <h2>Long-term mitigation of COVID-19</h2>
       <p>
         How will COVID-19 evolve over the first 18 months of the pandemic? 
@@ -30,24 +30,36 @@
 
       <div id="Intro" class="tabcontent text-tab">
         <h4 id='basic-waypoint'>Flatten the Curve</h4>
-        <p>By now, you've probably already seen a diagram like this. One of the most important steps we can all take right now is practicing social distancing. By cutting down on the number of people we interact with, we can slow down the spread of COVID-19. </p>
+        <p>By now, you've probably already seen a diagram like this. One of the most important steps we can all take right now is practicing <b class="sd-highlight">social distancing</b>. By cutting down on the number of people we interact with, we can slow down the spread of COVID-19. </p>
 
-        <svg id="chart_1">
+        <svg id="chart_1"></svg>
+
+        <svg id="chart_2"></svg>
 
         <p>Many of our health resources have a fixed capacity. If we have too many cases at a time, we simply won't be able to take care of everyone who gets sick. Hospitalizations above our limit will mean making hard decisions about which patients to prioritize. Some people may not be able to receive care. We are already seeing this scenario play out in places like Italy. The more social distancing we practice, the flatter the curve will be. </p>
+        <svg id="chart_3"></svg>
+        <svg id="chart_4"></svg>
         <h4>Delay the Peak</h4>
 
         <p>Flattening the curve isn't the only benefit of social distancing. While some of our health resources have fixed limits, others will become more available over time. We will be able to produce more resources like treatments and ventilators. Practices like social distancing can help delay the time until the number of cases peaks. Social distancing buys us time so that we can make sure we have the resources we need by then. </p>
+        
+        <svg id="chart_5"></svg>
 
         <h4>Keep it Flat</h4>
         <p> In places like South Korea and China, it seems like they've already gotten to the tail end of the curve. If we all stay inside for a couple of weeks, we can stop doing all of this social distancing stuff once cases start to drop, right? Not quite. </p>
+
+        <svg id="chart_6"></svg>
+        <svg id="chart_7"></svg>
+        <svg id="chart_8"></svg>
 
         <p>If we lift controls too quickly, we could see a resurgence, where cases pick back up quickly. In fact, if we completely stop practicing social distancing at any point in this model, we will eventually have an epidemic that overwhelms hospital capacity. </p>
 
         <h4>The Lightswitch Method</h4> 
         <p>We will probably have to stay careful for a long time after it seems like COVID-19 is gone in order to keep it under control, or until a vaccine is developed (which could take twelve to eighteen months). That doesn't mean we will necessarily need to stay in our houses the whole time, though. </p>
 
-        <p>Experts have shown that we can keep transmission relatively low and avoid overwhelming our healthcare capacity if we use a "lightswitch" approach. When we're on, we go back to social distancing and cases start to decrease. When we turn it off we can back off on social distancing and make smaller adjustments. Cases will start to increase a bit, but won't be able to grow out of control before we switch the social distancing back on. We can make our switches a certain amount of time (three weeks on, three weeks off) or a certain threshold based on data (for example: on when we pass 100 hospitalized cases in a week, off when we are below fifty hospitalized cases in a week).</p>
+        <p>Experts have shown that we can keep transmission relatively low and avoid overwhelming our healthcare capacity if we use a <b class="ls-highlight">"lightswitch" approach</b>. When we're on, we go back to social distancing and cases start to decrease. When we turn it off we can back off on social distancing and make smaller adjustments. Cases will start to increase a bit, but won't be able to grow out of control before we switch the social distancing back on. We can make our switches a certain amount of time (three weeks on, three weeks off) or a certain threshold based on data (for example: on when we pass 15 hospitalized cases in a week, off when we are below 2 hospitalized cases in a week).</p>
+
+        <svg id="chart_lightswitch"></svg>
 
         <p>This way, we can balance stopping the spread of COVID-19 and going about our normal lives.</p>
 
@@ -119,7 +131,7 @@
       openTab('intro-button', 'Intro')
     </script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
-    <!--<script type="text/javascript" src="lib/noframework.waypoints.js"></script>-->
+    <script type="text/javascript" src="lib/noframework.waypoints.js"></script>
     <script type="text/javascript" src="graphs.js"></script>
      
   </body>
