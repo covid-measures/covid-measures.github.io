@@ -2,6 +2,7 @@
 <html>
 <!-- using code from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_tabs -->
   <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Potential Long-Term Intervention Strategies for COVID-19">
   <title>Potential Long-Term Intervention Strategies for COVID-19</title>
@@ -20,6 +21,9 @@
         or skip directly to our <b class="text-link" onclick="openTab('model-button', 'Interactive Model')">
         interactive model</b> or an overview of <b class="text-link" onclick="openTab('details-button', 'Model Details')">model details</b>.
       </p>
+      <p> 
+        <b class="text-link" onclick="openTab('santa-clara-button', 'Santa Clara')">NEW: See our model predictions for Santa Clara County.</b>
+      </p>
       <h5>
         Team: Marissa Childs, Morgan Kain, Devin Kirk, Mallory Harris, Jacob Ritchie, Lisa Couper, Isabel Delwel, Nicole Nova, Erin Mordecai
       </h5>
@@ -28,28 +32,29 @@
         <button class="tablinks" id="intro-button" onclick="openTab('intro-button', 'Intro')">Introduction</button>
         <button class="tablinks" id="model-button" onclick="openTab('model-button', 'Interactive Model')">Interactive Model</button>
         <button class="tablinks" id="details-button" onclick="openTab('details-button', 'Model Details')">Model Details</button>
+        <button class="tablinks" id="santa-clara-button" onclick="openTab('santa-clara-button', 'Santa Clara')">Santa Clara County</button>
       </div>
 
       <div id="Intro" class="tabcontent text-tab">
 
         <h4 id='basic-waypoint'>Flatten the Curve</h4>
-        <p>By now, you've probably already seen a diagram like this. One of the most important steps we can all take right now is practicing <b class="sd-highlight">social distancing</b>. By cutting down on the number of people we interact with, we can slow down the spread of COVID-19. Here's a hypothetical scenario where a COVID-19 outbreak begins on Jan 15, and spreads for 50 days before we begin social distancing. We run <b class="sim-highlight">20 simulations</b> and show the <b>median value for each day</b>.</p> 
+        <p>By now, you've probably already seen a diagram like this. One of the most important steps we can all take right now is to practice <b class="sd-highlight">social distancing</b>. One of the most powerful ways we can all slow down the spread of COVID-19 (or "flatten the curve") is to interact with fewer people. Here's a hypothetical scenario where a COVID-19 outbreak begins on Jan 15, and spreads for 50 days before we begin social distancing. We run <b class="sim-highlight">20 simulations</b> and show the <b>median value for each day</b>.</p> 
 
         <svg id="chart_1"></svg>
 
         <svg id="chart_2"></svg>
 
-        <p>Many of our health resources have a fixed capacity. If we have too many cases at a time, we simply won't be able to take care of everyone who gets sick. Hospitalizations above our limit will mean making hard decisions about which patients to prioritize (for example, Santa Clara County has roughly 4500 hospital beds). Some people may not be able to receive care. We are already seeing this scenario play out in places like Italy. The more social distancing we practice, the flatter the curve will be. </p>
+        <p>Many of our health resources, like the number of doctors and nurses, have a fixed upper limit. If too many people get sick at once, we simply won't be able to take care of everyone. And that will mean making hard decisions about which patients to prioritize (for example, Santa Clara County has roughly 4500 hospital beds). Some people may not be able to receive care. We are already seeing this scenario play out in places like Italy. The more social distancing we practice, the flatter the curve will be, and the flatter the curve, the less likely we are to overwhelm our healthcare system.</p>
         
         <h4>Delay the Peak</h4>
 
-        <p>Flattening the curve isn't the only benefit of social distancing. While some of our health resources have fixed limits, others will become more available over time. We will be able to produce more resources like treatments, ventilators and hospital beds (though exactly how many we can produce is unclear. One possible scenario is pictured below). Practices like social distancing can help delay the time until the number of cases peaks. Social distancing buys us time so that we can make sure we have the resources we need by then. </p>
+        <p>Flattening the curve isn't the only benefit of social distancing. While some of our health resources have fixed limits, others will increase their capacities over time. We will be able to produce more resources like treatments, ventilators and hospital beds, for instance, but doing so takes weeks to months.  (Exactly how much we can increase capacity is unclear. One possible scenario is pictured below). Practices like social distancing can help delay the time until the number of cases peaks. Social distancing buys us time so that we can prepare the resources we need to treat everyone who gets sick.</p>
         
         <svg id="chart_3"></svg>
         <svg id="chart_4"></svg>
 
         <h4>Keep it Flat</h4>
-        <p> In places like South Korea and China, it seems like they've already gotten to the tail end of the curve. If we all stay inside for a couple of weeks, we can stop doing all of this social distancing stuff once cases start to drop, right? Not quite. </p>
+        <p> In places like South Korea and China, it seems like they've already gotten to the tail end of the curve. If we all stay inside for a couple of weeks, we can stop all of this social distancing once cases start to drop, right? Not quite. </p>
 
         <svg id="chart_6"></svg>
         <svg id="chart_7"></svg>
@@ -58,15 +63,15 @@
         <p>If we lift controls too quickly, we could see a resurgence, where cases pick back up quickly. In fact, if we completely stop practicing social distancing at almost any point in this model, we risk an epidemic that overwhelms hospital capacity. </p>
 
         <h4>The Lightswitch Method</h4> 
-        <p>We will probably have to stay careful for a long time after it seems like COVID-19 is gone in order to keep it under control, or until a vaccine is developed (which could take twelve to eighteen months). That doesn't mean we will necessarily need to stay in our houses the whole time, though. </p>
+        <p>We will probably have to stay careful for a long time after it seems like COVID-19 is gone in order to keep it under control. The best way to eradicae it, a vaccine, is likely twelve to eighteen away. That doesn't mean we will necessarily need to stay in our houses the whole time, though. </p>
 
-        <p>Experts have shown that we can keep transmission relatively low and avoid overwhelming our healthcare capacity if we use a <b class="ls-highlight">"lightswitch" approach</b>. When we're on, we go back to social distancing and cases start to decrease. When we turn it off we can back off on social distancing and make smaller adjustments. Cases will start to increase a bit, but won't be able to grow out of control before we switch the social distancing back on. We can make our switches a certain amount of time (three weeks on, three weeks off) or a certain threshold based on data (for example: on when we pass 15 hospitalized cases in a week, off when we are below 2 hospitalized cases in a week).</p>
+        <p>Experts have shown that we can keep transmission relatively low and avoid overwhelming our healthcare capacity if we use a <b class="ls-highlight">"lightswitch" approach</b>. When we're "on", we go back to social distancing and cases start to decrease. When we're "off" we can dial down social distancing and make smaller adjustments. Cases will start to increase slowly, but won't grow out of control before we switch social distancing back on. We could make our switches last a certain amount of time (e.g., three weeks on, three weeks off); or tie them to certain thresholds based on data (e.g., "on" when we pass 15 hospitalized cases in a week, "off" when we are below 2 hospitalized cases in a week).</p>
 
         <svg id="chart_lightswitch"></svg>
 
-        <p>This way, we can balance stopping the spread of COVID-19 and going about our normal lives.</p>
+        <p>This way, we can balance stopping the spread of COVID-19 and living our normal lives.</p>
 
-        <p>We know this is an incredibly stressful and scary time for people around the world. There's a lot of uncertainty, but scientists, medical professionals, and leaders across industries are working together to help us find solutions. If we make decisions based on the best models we have, we can get through this crisis while protecting the most vulnerable and minimizing the impact on our lives and the economy.</p>
+        <p>This is an incredibly stressful and scary time for people around the world. There's a lot of uncertainty, but scientists, medical professionals, and leaders across industries are working together to help us find solutions. If we make decisions based on the best models we have, we can both minimize the impact to our lives and our economy <i>and</i> still protect the most vulnerable among us.</p>
 
         <p>If you'd like, you can <b class="text-link" onclick="openTab('model-button', 'Interactive Model')">play around with our model more here</b>. Test how interventions change based on start date and adding in quarantining of symptomatic people.</p>
       </div>
@@ -90,7 +95,7 @@
           individuals who go on to become symptomatic first go through a pre-symptomatic but infectious state (I<sub>p</sub>). 
           Those who show symptoms are further divided between those with mild symptoms
           (I<sub>m</sub>) and severe symptoms (I<sub>s</sub>) who require hospitalization. We assume that after admission to the 
-          hospital, no onward transmission occurs. The model is implemented in R with the package “pomp” using a 
+          hospital, no onward transmission occurs. The model is implemented in R with the package "pomp" using a 
           stochastic simulator where the movements between compartments are multinomially distributed based on transition
           rates.</p>
           <img src="model_schematic.png">
@@ -141,15 +146,180 @@
           <h4>Source Code</h4>
 
           <p> All code for the model is available on Github: <b><a class="text-link" href="https://github.com/morgankain/COVID_interventions">https://github.com/morgankain/COVID_interventions</a></b>.</p>
-
           
+        </div>
+        <div id="Santa Clara" class="tabcontent text-tab">
+          <h4 id='basic-waypoint'>Hospitalization Estimates for Santa Clara County</h4>
+          <p>We estimate baseline transmission rate (beta<sub>0</sub> in our model) and R<sub>0</sub> for Santa Clara County, using local parameter values when possible, with the R package pomp (King et al. 2020). See "detailed methods" below for more information. This gives us a sense of how the virus would spread if we took no action.</p>
+
+          <p>Generally, we attempt to capture the non-pharmaceutical interventions that have already happened in Santa Clara County. In early March, people began to change their behavior in response to the virus (for example, working from home, cancelling large social events). On March 17th, a shelter-in-place order began for the entire Bay Area.</p>
+
+
+          <p>Incorporating uncertainty in some parameters specific to the outbreak in Santa Clara County (but far from all of them), we estimate a median baseline transmission rate of 0.54 (0.43 - 0.70; 95% CI), which translates into an R<sub>0</sub> of 3.49 (2.82 - 4.60; 95% CI). Using these estimates for beta<sub>0</sub>, we find reducing the contact rate for the whole population by 72% (64% - 78%, 95% CI) brings R<sub>0</sub> below one, a basic threshold for getting transmission under control.</p>
+
+          <img src="santa-clara-figures/histogram.png">
+          <p class="fig-caption">Figure 1: R<sub>0</sub> estimates for Santa Clara county assuming no social distancing (red) and very strong social distancing (shelter-in-place) that reduces contacts to 5%-30% of baseline (blue). We find that at the median estimated R<sub>0</sub>, a 72% reduction in contacts among all residents reduces the R<sub>0</sub> to one.</p>
+
+          <p>The contact rates we give should not be taken as exact guidelines at the personal level because we assume that all contacts have the same likelihood of transmission, which probably isn’t true (for example, people may be more likely to infect other people in their household compared to people they encounter at the grocery store). All of our estimates also assume that no infected individuals enter the county from other areas at any point in the study.</p>
+
+          <p>We note that with even strong social distancing (e.g at least 72% reduction in normal contacts), the epidemic will take a long time to end because of lags due to both intervention implementation and the duration of individual infections. Additionally, given that many interventions may bring R<sub>0</sub> just below one, cases decrease at a low rate because of the abundance of currently circulating cases and the long duration of individual COVID-19 infections. </p>
+
+          <p>Because of this, if a strong intervention is lifted too early, we still expect to see a second epidemic (although cases and hospitalizations may be reduced).</p>
+
+          <img src="santa-clara-figures/int_1.png">
+          <p class="fig-caption" style="text-align: center;">Figure 2: Premature termination of shelter-in-place will lead to a second epidemic peak.</p>
+          <p>Given the required duration of shelter-in-place (e.g. around five months) to reduce cases to zero), we are exploring other intervention options that would help our community return to a semblance of normal life, while keeping cases under control. One example is the "light-switch" method shown on the Introduction page. An alternative is to weaken social distancing to a contact reduction rate of ~30% after some time (e.g. 60 days), while implementing strong symptomatic case isolation. Our model simulations show that this intervention strategy could be a promising alternative to 5+ months of strong social distancing.</p>
+
+          <img src="santa-clara-figures/int_3.png">
+          <p class="fig-caption">Figure 3: Shifting from strong shelter-in-place to less stringent social distancing after 60 days, given the addition of strong case isolation, prevents the hospital system from getting overwhelmed. The virus will continue to spread at low levels for over a year.</p>
+
+          <p>Across a broad range of values for the strength and duration of the shelter-in-place order in Santa Clara County, we find that shifting to weaker social distancing while also implementing infected isolation reduces hospitalizations and deaths compared to even long-term shelter-in-place (Figure 4). We emphasize the qualitative patterns here of decreasing maximum hospitalizations and deaths, and note that because this strategy prolongs the epidemic, we still estimate thousands of people dying under this intervention. We are actively working to find a feasible intervention that leads to far fewer hospitalizations and deaths.</p>
+
+          <p>That being said, across a broad parameter set for the strength and duration of the shelter in place order in Santa Clara County, we find that shifting to social distancing while also implementing infected isolation reduces hospitalizations and deaths compared to even long-term shelter-in-place (Figure 4). We emphasize the qualitative patterns here of decreasing maximum hospitalizations and deaths, and note that because this strategy prolongs the epidemic, we still estimate thousands of people dying under this intervention. We are actively working to find a feasible intervention that leads to far fewer hospitalizations and deaths.</p>
+
+          <img class="big-img" src="santa-clara-figures/inf_iso.png">
+          <p class="fig-caption"> Figure 4: Simulations across parameter values for the duration and strength of shelter-in-place among other parameter values (see "detailed methods" below). Circles show estimates for shelter-in-place only.  Triangles show scenarios where shelter-in-place is reduced to weaker social distancing (60%-90% of baseline contacts on day 60 of shelter-in-place -- May 16), while also implementing strong symptomatic case isolation (<5% of contacts). The simulations for triangles assumes this weak social distancing extends until the end of the simulation. Strong symptomatic case isolation with an extended period of weak social distancing reduces maximum simultaneous hospitalizations and total deaths, but in many cases extends the epidemic in time despite stopping a second large peak.</p>
+
+          <p>Promisingly, with an increase in testing, it may be possible to begin contact tracing (in other words, notify people who have been exposed to a detected case and isolate potentially infected people) which will also remove potential future infected individuals. Contact tracing will lead to a more successful intervention than is pictured in Figure 3, which only includes the isolation of symptomatic individuals, as it can allow for the isolation of "silent spreaders" who are pre-symptomatic or asymptomatic.</p>
+
+          <h4>Detailed methods</h4>
+          <p>To estimate beta<sub>0</sub>, we fit our model (see model details)  to observed deaths in Santa Clara County across a range of possible parameter values for some parameters, while fixing many others. Our procedure was as follows:</p> 
+
+          <ol>
+            <li>
+              Establish ranges of parameter values for some unknown parameters for exact parameter values see Table 1 below), while taking the rest as fixed:
+              <ol type="I">
+                <li>Start date of the more relaxed, suggested "work from home" initiative</li>
+                <li>Proportional reduction in contacts from the "work from home" initiative
+                </li>
+                <li>Proportional reduction in contacts from shelter-in-place
+                </li>
+                <li>Length of shelter-in-place
+                </li>
+                <li>Start date of the epidemic
+                </li>
+                <li>Number of initial infections that began the epidemic</li>
+              </ol>
+              <li>Draw three hundred sobol sequences from these ranges</li>
+              <li>For each parameter set estimate beta<sub>0</sub> with pomp (function mif2), fit to recorded daily deaths</li>
+              <li>Simulate 200 epidemics from day 0 with the fitted beta<sub>0</sub> (without uncertainty in the estimate of beta<sub>0</sub> for now), and the parameters used to fit beta<sub>0</sub></li>
+              <li>
+                Calculate the summary statistics for this run (which lead to a single data point in Figure 4)
+                <ol type="I">
+                <li>We calculate R<sub>0</sub> using estimated transmission rate (beta<sub>0</sub>) times the duration of an average infection as defined by our model strucure</li>
+                      <li>We note that we assume a closed population; under the realistic assumption of regularly imported cases, an even more effective high magnitude of social distancing will be needed.</li>
+                </ol>
+              </li>
+          </ol>
+
+          <p>We use data from The New York Times, based on reports from state and local health agencies. These data are available at <a href="https://github.com/nytimes/covid-19-data">https://github.com/nytimes/covid-19-data</a>. Daily deaths are calculated from differences in cumulative death reports. </p>
+
+          <img src="santa-clara-figures/model_fit.png">
+          <p class='fig-caption' style="text-align: center;">Figure 5: Example showing simulation with 95% confidence interval (grey) from fitted model compared to data (red).</p> 
+
+
+          <table class="tg">
+            <tr>
+              <th class="tg-0lax">Uncertain Parameters</th>
+              <th class="tg-0lax">Lower bound</th>
+              <th class="tg-0lax">Upper bound</th>
+            </tr>
+            <tr>
+              <td class="tg-0lax">Work from home start date</td>
+              <td class="tg-0lax">01-Mar</td>
+              <td class="tg-0lax">10-Mar</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">Work from home proportional decrease in contacts</td>
+              <td class="tg-0lax">0.6</td>
+              <td class="tg-0lax">0.9</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">Proportional reduction in contacts from shelter in place</td>
+              <td class="tg-0lax">0.05</td>
+              <td class="tg-0lax">0.3</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">Length of shelter-in-place</td>
+              <td class="tg-0lax">60</td>
+              <td class="tg-0lax">200</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">Start date of the epidemic</td>
+              <td class="tg-0lax">15-Jan</td>
+              <td class="tg-0lax">29-Jan</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">Number of initial infections that began the epidemic</td>
+              <td class="tg-0lax">1</td>
+              <td class="tg-0lax">10</td>
+            </tr>
+          </table>
+          <br>
+          <table class="tg">
+            <tr>
+              <th class="tg-0lax">Fixed Parameters</th>
+              <th class="tg-0lax">Value</th>
+            </tr>
+            <tr>
+              <td class="tg-0lax">Relative infectiousness of asymptomatic infected individuals</td>
+              <td class="tg-0lax">03-Feb</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">Proportion of infections that are asymptomatic</td>
+              <td class="tg-0lax">03-Jan</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">Portion of symptomatic infections that require hospitalization</td>
+              <td class="tg-0lax">4.40%</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">Incubation period</td>
+              <td class="tg-0lax">5.2 days</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">Presymptomatic duration</td>
+              <td class="tg-0lax">2 days</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">Infectious period for asymptomatic infections</td>
+              <td class="tg-0lax">7 days</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">Time from symptom onset to hospitalizations (severe cases)</td>
+              <td class="tg-0lax">5.76 days</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">Time from symptom onset to recovery (mild cases)</td>
+              <td class="tg-0lax">7 days</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">Fatality rate among hospitalizations</td>
+              <td class="tg-0lax">05-Jan</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">Time from hospitalization to recovery</td>
+              <td class="tg-0lax">14.5 days</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">Population</td>
+              <td class="tg-0lax">1,938,000</td>
+            </tr>
+          </table>
+
+          <p>Neil M Ferguson, Daniel Laydon, Gemma Nedjati-Gilani, Natsuko Imai, Kylie Ainslie, Marc Baguelin, Sangeeta Bhatia, Adhiratha Boonyasiri,  Zulma Cucunubá, Gina Cuomo-Dannenburg, Amy Dighe, Ilaria Dorigatti,  Han Fu, Katy Gaythorpe, Will Green, Arran Hamlet, Wes Hinsley, Lucy C Okell, Sabine van Elsland, Hayley Thompson, Robert Verity, Erik Volz, Haowei Wang, Yuanrong Wang, Patrick GT Walker, Caroline Walters, Peter Winskill, Charles Whittaker, Christl A Donnelly, Steven Riley, Azra C Ghani. 2020. Report 9 - Impact of non-pharmaceutical interventions (NPIs) to reduce COVID-19 mortality and healthcare demand.</p>
+
+
+          <p>King AA, Ionides EL, Breto CM, Ellner SP, Ferrari MJ, Kendall BE, Lavine M, Nguyen D, Reuman DC, Wearing H, Wood SN (2020). pomp: Statistical Inference for Partially Observed Markov Processes. R package, version 2.7, <a href="https://kingaa.github.io/pomp/.">https://kingaa.github.io/pomp/</a>.</p>
+          
+          <h4></h4>
         </div>
 
         <p>We are grateful for the <a class="text-link" href='https://midasnetwork.us/covid-19/'>MIDAS network for providing data, code, and inspiration for this project</a>.</p> 
 
-        <p>Funding was provided by the <a class="text-link" href="https://nsf.gov/">National Science Foundation (DEB-1518681)</a>, the <a class="text-link" href="https://www.nigms.nih.gov/Research/mechanisms/MIRA/Pages/default.aspx">National Institute of General Medical Sciences (1R35GM133439-01)</a>, the Helman Scholarship, and the Terman Award.</p> 
+        <p>Funding was provided by the <a class="text-link" href="https://nsf.gov/">National Science Foundation (DEB-1518681)</a>, the <a class="text-link" href="https://www.nigms.nih.gov/Research/mechanisms/MIRA/Pages/default.aspx">National Institute of General Medical Sciences (1R35GM133439-01)</a>, the <a href="https://naturalcapitalproject.stanford.edu/">Natural Capital Project</a>, the Helman Scholarship, and the Terman Award.</p> 
         
-        <p>Erin Mordecai is an Assistant Professor of Biology at Stanford, a Center Fellow, by courtesy, at the Woods Institute for the Environment, a member of Bio-X, a Faculty Fellow in the Center for Innovation in Global Health, and a Faculty Fellow in the King Center for Global Development. Nicole Nova was supported by the Stanford Data Science Scholarship. Jacob Ritchie was supported by The Terry Winograd Fellowship.</p>
+        <p>Erin Mordecai is an Assistant Professor of Biology at Stanford, a Center Fellow, by courtesy, at the Woods Institute for the Environment, a member of Bio-X, a Faculty Fellow in the Center for Innovation in Global Health, and a Faculty Fellow in the King Center for Global Development. Marissa Childs was supported by the llich-Sadowsky Fellowship through the Stanford Interdisciplinary Graduate Fellowship (SIGF) program at Stanford University. Morgan Kain was supported by the <a href="https://naturalcapitalproject.stanford.edu/">Natural Capital Project</a>. Nicole Nova was supported by the Stanford Data Science Scholarship. Jacob Ritchie was supported by The Terry Winograd Fellowship.  Mallory Harris was supported by the Knight-Hennessy Scholarship.</p>
       
       </div>
       

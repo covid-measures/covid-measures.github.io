@@ -1,6 +1,6 @@
 body {
   font-family: Arial;
-  background-color: #dad7cb;
+  background-color: white;
   color: #2e2d29;
   text-align: center;
 }
@@ -23,6 +23,28 @@ body {
 .text-tab {
   padding: 10px 200px;
 }
+
+.fig-caption {
+  color: #777;
+}
+
+.big-img{
+  width: 90%
+}
+
+table {
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+th {
+  background-color: #8c1515;
+  color: white;
+}
+
+
+tr:nth-child(even) {background-color: #f0eadc;}
+
 
 img {
   border-style: solid;
